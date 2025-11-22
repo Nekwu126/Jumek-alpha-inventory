@@ -16,7 +16,7 @@ export default function Inventory() {
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/products");
+      const res = await fetch("https://inventory-backend-u69e.onrender.com/products");
       const data = await res.json();
       setProducts(data);
     } catch (err) {
@@ -37,8 +37,8 @@ export default function Inventory() {
     e.preventDefault();
 
     const url = editingProduct
-      ? `http://localhost:5000/api/products/${editingProduct._id}`
-      : "http://localhost:5000/api/products";
+      ? `https://inventory-backend-u69e.onrender.com/products/${editingProduct._id}`
+      : "https://inventory-backend-u69e.onrender.com/products";
 
     const method = editingProduct ? "PUT" : "POST";
 
@@ -70,7 +70,7 @@ const deleteProduct = async (id) => {
   if (!window.confirm("Are you sure you want to delete this product?")) return;
 
   try {
-    const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+    const res = await fetch(`https://inventory-backend-u69e.onrender.com/products/${id}`, {
       method: "DELETE",
     });
 
