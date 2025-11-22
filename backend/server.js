@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['https://inventory-backend-u69e.onrender.com'],
   credentials: true
 }));
 app.use(express.json());
